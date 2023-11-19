@@ -262,7 +262,10 @@ body {
     outline: none;
 }
 
-
+.navbar-toggler:focus {
+    outline: none;
+  }
+  
 
 @media (max-width:1200px) {
     .split-section-2 {
