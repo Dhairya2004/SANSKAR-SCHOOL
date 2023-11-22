@@ -39,17 +39,19 @@ const carousel = document.querySelector(".carousel"),
 
 const autoSlide = () => {
   let firstImgWidth = firstImg.clientWidth + 14;
-  let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
+  let scrollWidth = carousel.scrollWidth;
 
-  if (carousel.scrollLeft === 0) {
-    // If at the beginning, smoothly scroll to the end
-    carousel.scrollLeft += firstImgWidth;
-  } else {
+  if (carousel.scrollLeft + carousel.clientWidth + 14 >= scrollWidth) {
     // If at the end, smoothly scroll to the beginning
     carousel.scrollLeft = 0;
+  } else {
+    // Otherwise, smoothly scroll to the next image
+    carousel.scrollLeft += firstImgWidth;
   }
   showHideIcons();
 };
+
+
 
 // Set interval to trigger autoSlide every 1 second
 setInterval(autoSlide, 3000);
