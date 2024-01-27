@@ -111,27 +111,36 @@
         </div>
 
         <!--Gallery section-->
-        <div class="gallery" >
-            <div class=" section-separator mb-4 d-flex align-items-center justify-content-center">
-                <h1 class="text-center"><b>AT GLANCE</b></h1>
-            </div>
-            <div class="wrapper-container p-5" style="background-color: #E6D3FF;">
-                <div class="wrapper">
-                    <!--Carousel for displaying images-->
-                    <!-- <i id="left" class="fa-solid fa-angle-left" style="z-index: 2; border:3px solid #E6D3FF;"></i> -->
-                    <div class="carousel">
-                        <img src="images/gallery1.jpg" alt="img" draggable="false">
-                        <img src="images/gallery3.jpg" alt="img" draggable="false">
-                        <img src="images/gallery2.jpg" alt="img" draggable="false">
-                        <img src="images/gallery4.jpg" alt="img" draggable="false">
-                        <img src="images/gallery5.png" alt="img" draggable="false">
-                        <img src="images/gallery6.jpg" alt="img" draggable="false">
-                        <img src="images/school.png" alt="img" draggable="false">
-                    </div>
-                    <!-- <i id="right" class="fa-solid fa-angle-right" style="z-index: 2; border:3px solid #E6D3FF;"></i> -->
+        <div class="wrapper-container p-5" >
+            <div class="wrapper">
+                <!--Carousel for displaying images-->
+                <!-- <i id="left" class="fa-solid fa-angle-left" style="z-index: 2; border:3px solid #E6D3FF;"></i> -->
+                <div class="carousel">
+                    <script>
+                        // Define an array to hold image filenames
+                        var imageNames = [];
+                
+                        // Loop from 1 to 50 to generate filenames
+                        for (var i = 1; i <= 50; i++) {
+                            // Generate filename based on the pattern "gallery-i.jpg"
+                            var filename = "gallery-" + i + ".jpg";
+                            // Push filename into the array
+                            imageNames.push(filename);
+                        }
+                
+                        // Loop through the array and create <img> elements dynamically
+                        imageNames.forEach(function(imageName) {
+                            var img = document.createElement("img");
+                            img.src = "images/gallery/" + imageName; // Assuming images are in the "images" folder
+                            img.alt = "img";
+                            img.draggable = false;
+                            document.querySelector(".carousel").appendChild(img);
+                        });
+                    </script>
                 </div>
-            </div>
+                
         </div>
+    </div>
         <div style="text-align: center;">
             <!--Button to view more images-->
            <a href="/gallery.html"> <button class="button-33 mt-5" role="button">View More</button></a>

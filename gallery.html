@@ -22,6 +22,7 @@
 </head>
 
 <body>
+
     <div class="page-loader">
         <div class="loader"></div>
     </div>
@@ -64,40 +65,43 @@
                 </ul>
             </div>
         </nav>
-        <img src="images/gallery.png" class="my-5 w-100" >
 
-        <div class="row d-flex justify-content-center" style="background-color: #E6D3FF;">
-            <div class="col-md-10 col-xl-8 text-center">
-                <h2 class="m-4"><b>School Gallery</b></h2>
-            </div>
+        <div class="gallery">
+            <br>
+            <div class="card-container d-flex flex-wrap"></div>
+            <script>// Define an array to hold image filenames
+                var imageNames = [];
+
+                // Generate filenames for gallery images
+                for (var i = 1; i <= 50; i++) {
+                    imageNames.push("gallery-" + i + ".jpg");
+                }
+
+                // Get the card container
+                var cardContainer = document.querySelector(".card-container");
+
+                // Loop through the array and create card elements dynamically
+                imageNames.forEach(function (imageName) {
+                    var card = document.createElement("div");
+                    card.classList.add("card", "m-2"); // Add Bootstrap classes for cards and margin
+                    card.style.width = "300px"; // Set a fixed width for the card
+                    var img = document.createElement("img");
+                    img.src = "images/gallery/" + imageName; // Assuming images are in the "images" folder
+                    img.classList.add("card-img-top");
+                    img.style.height = "200px"; // Set a fixed height for the image
+                    img.style.objectFit = "cover"; // Maintain aspect ratio and cover entire card
+                    img.alt = "img";
+                    card.appendChild(img);
+                    cardContainer.appendChild(card);
+                });
+
+                // Apply flexbox properties to align cards with space between them
+                cardContainer.style.display = "flex";
+                cardContainer.style.flexWrap = "wrap";
+                cardContainer.style.justifyContent = "space-evenly";
+            </script>
+
         </div>
-        <div class="row m-2">
-
-            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                <img src="images/gallery1.jpg"
-                    class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
-
-                <img src="https://thumbs.dreamstime.com/b/park-playground-where-kids-playtime-bursts-vibrancy-joy-vienna-austria-july-experience-exuberance-play-our-city-288822148.jpg"
-                    class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
-            </div>
-
-            <div class="col-lg-4 mb-4 mb-lg-0">
-                <img src="images/function.png"
-                    class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" />
-
-                <img src="images/gallery4.jpg"
-                    class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
-            </div>
-
-            <div class="col-lg-4 mb-4 mb-lg-0">
-                <img src="images/gallery5.png"
-                    class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
-
-                <img src="https://chinnalapattidevangarhss.com/images/DGHS/class3.JPG"
-                    class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
-            </div>
-        </div>
-        <!-- Gallery -->
 
 
         <footer style="background-color: #E6D3FF;">
