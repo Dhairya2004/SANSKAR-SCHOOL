@@ -370,6 +370,9 @@ body {
         height: 650px;
 
     }
+    .split-section-2-left h1 {
+        font-size: 1.5em; /* Adjust the font size as needed for mobile screens */
+      }
     
 
     .carousel img {

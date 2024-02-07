@@ -143,3 +143,16 @@ function typeWriter(text, index) {
 // Call the typeWriter function with the slogan text
 typeWriter(sloganText, 0);
 
+document.getElementById('emailForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  var name = document.getElementById('name').value;
+  var message = document.getElementById('message').value;
+  var email = document.getElementById('email').value;
+
+  var mailtoLink = 'mailto:sanskaarschooljaipurkhor@gmail.com'
+                + '?subject=Query from ' + encodeURIComponent(name)
+                + '&body=' + encodeURIComponent( message);
+
+  window.location.href = mailtoLink;
+});
